@@ -45,14 +45,20 @@ app.get('/', function homepage(req, res) {
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
-    woopsIForgotToDocumentAllMyEndpoints: true, // CHANGE ME ;)
+    woopsIForgotToDocumentAllMyEndpoints: false,
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/example-username/express-personal-api/README.md", // CHANGE ME
-    baseUrl: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    documentationUrl: "https://github.com/johnson-rl/express-personal-api/blob/master/README.md",
+    baseUrl: "http://arrjay-api.herokuapp.com",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/portfolio", description: "Samples of my work"},
+      {method: "GET", path: "/api/future-portfolio", description: "What I am currently working on or planning"},
+      {method: "POST", path: "/api/future-portfolio", description: "Add a project to my to do list"},
+      {method: "GET", path: "/api/locations", description: "Places I've lived or loved"},
+      {method: "POST", path: "/api/destinations", description: "Places I need to visit"},
+      {method: "GET", path: "/api/current-obsessions", description: "Stuff with which I'm currently obsessed"},
+      {method: "POST", path: "/api/suggestions", description: "Works of art I'm yet to enjoy"},
     ]
   })
 });
