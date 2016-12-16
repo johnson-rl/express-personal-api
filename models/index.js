@@ -1,4 +1,4 @@
 var mongoose = require("mongoose");
 mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/personal-api");
-module.exports.Project = reuire (".portfolio.js")
+module.exports.Project = require ("./portfolio.js");
 // module.exports.Campsite = require("./campsite.js.example");

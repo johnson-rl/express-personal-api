@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -61,7 +61,7 @@ app.get('/api', function api_index(req, res) {
       {method: "GET", path: "/api/current-obsessions", description: "Stuff with which I'm currently obsessed"},
       {method: "POST", path: "/api/suggestions", description: "Works of art I'm yet to enjoy"},
     ]
-  })
+  });
 });
 
 app.get('/api/profile', function(req, res){
@@ -78,6 +78,11 @@ app.get('/api/profile', function(req, res){
 });
 
 app.get('api/portfolio', function(req, res){
+  db.Project.find({}, function(err, allProjects))
+  res.json({portfolio: allProjects})
+});
+
+app.get('api/portfolio/:id', function(req, res){
 
 });
 
