@@ -76,7 +76,7 @@ app.get('/api/profile', function(req, res){
     pets: [{type: 'Cat', name: "Juniper", breed: "Domestic Shorthair"}, {type: "Imaginary Dog", name: "Rufus", breed: "Boxer"}]
   });
 });
-
+//Get all portfolio projects
 app.get('/api/portfolio', function(req, res){
   db.Project.find({}, function(err, allProjects){
     if (err){
@@ -86,7 +86,7 @@ app.get('/api/portfolio', function(req, res){
     res.json({portfolio: allProjects})
   });
 });
-
+//Get one portfolio project
 app.get('/api/portfolio/:id', function(req, res){
   db.Project.findOne({_id: req.params.id }, function(err, book) {
     if (err){
@@ -96,7 +96,7 @@ app.get('/api/portfolio/:id', function(req, res){
     res.json(book);
   });
 });
-
+//Create a portfolio project
 app.post('/api/portfolio', function(req, res){
   var newProject = new db.Project ({
     name: req.body.name,
@@ -105,21 +105,45 @@ app.post('/api/portfolio', function(req, res){
     techUsed: req.body.tech,
     achievement: req.body.achievement
   });
-  console.log(newProject)
-  newProject.save(function (err, book){
+  // console.log(newProject)
+  newProject.save(function (err, project){
     if (err){
-      console.log('Book not saved', err);
+      console.log('Project not saved', err);
+      res.send('Project not saved', err);
     }
-    res.json(book);
+    res.json(project);
   });
 });
-
+//Edit a portfolio project
 app.put('/api/portfolio/:id', function(req, res){
-
+  db.Project.findOne({_id: req.params.id}, function (err, project){
+    if (err){
+      console.log("No edit made",err);
+      res.send("No edit made",err);
+    }
+    project.name = req.body.name;
+    project.description = req.body.description;
+    project.link = req.body.link;
+    project.techUsed = req.body.tech;
+    project.achievement = req.body.achievement;
+    project.save(function (err, project){
+      if (err){
+        console.log('Project not saved', err);
+        res.send('Project not saved', err);
+      }
+      res.json(project);
+    });
+  });
 });
-
+//Delete a portfolio project
 app.delete('/api/portfolio/:id', function(req, res){
-
+  db.Project.findOneAndRemove({_id: req.params.id}, function(err, project){
+    if (err){
+      console.log('Project not deleted', err);
+      res.send('Project not deleted', err)
+    }
+    res.json(project);
+  });
 });
 
 app.get('/api/locations', function(req, res){
@@ -138,14 +162,7 @@ app.post('/api/suggestions', function(req, res){
 
 });
 
-// name - a string
-// githubUsername - a string
-// githubLink - a url to your github profile
-// githubProfileImage - the url of your github profile image
-// personalSiteLink - a link to your personal site.
-// currentCity
-// pets - an array of your pets
-// e.g. [{name: "foo", type: "Cat", breed: "Siamese"}, {name: "bar", type: "Dog", breed: "Dalmation"}]
+
 /**********
  * SERVER *
  **********/
