@@ -52,8 +52,9 @@ app.get('/api', function api_index(req, res) {
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Who is this arrjay guy anyway?"},
       {method: "GET", path: "/api/portfolio", description: "Samples of my work"},
-      {method: "GET", path: "/api/future-portfolio", description: "What I am currently working on or planning"},
-      {method: "POST", path: "/api/future-portfolio", description: "Add a project to my to do list"},
+      {method: "POST", path: "/api/portfolio", description: "Add a project"},
+      {method: "PUT", path: "/api/portfolio/:id", description: "Update info about a project"},
+      {method: "DELETE", path: "/api/portfolio/:id", description: "Remove a project"},
       {method: "GET", path: "/api/locations", description: "Places I've lived or loved"},
       {method: "POST", path: "/api/destinations", description: "Places I need to visit"},
       {method: "GET", path: "/api/current-obsessions", description: "Stuff with which I'm currently obsessed"},
@@ -71,10 +72,41 @@ app.get('/api/profile', function(req, res){
     personalSiteLink: "https://johnson-rl.github.io/",
     personalFunSiteLink: "http://arrjay.ninja/",
     currentCity: "San Franciso",
-    pets: [{type: 'cat', name: "Juniper", breed: "Domestic Shorthair"}, {type: "Imaginary Dog", name: "Rufus", breed: "Boxer"}]
+    pets: [{type: 'Cat', name: "Juniper", breed: "Domestic Shorthair"}, {type: "Imaginary Dog", name: "Rufus", breed: "Boxer"}]
   });
 });
 
+app.get('api/portfolio', function(req, res){
+
+});
+
+app.post('api/portfolio', function(req, res){
+
+});
+
+app.put('api/portfolio/:id', function(req, res){
+
+});
+
+app.delete('api/portfolio/:id', function(req, res){
+
+});
+
+app.get('api/locations', function(req, res){
+
+});
+
+app.post('api/destinations', function(req, res){
+
+});
+
+app.get('api/current-obsessions', function(req, res){
+
+});
+
+app.post('api/suggestions', function(req, res){
+
+});
 
 // name - a string
 // githubUsername - a string
