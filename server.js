@@ -81,41 +81,60 @@ app.get('/api/portfolio', function(req, res){
   db.Project.find({}, function(err, allProjects){
     if (err){
       console.log(err)
-      res.send("No projects found")
+      res.send("No projects found", err)
     }
     res.json({portfolio: allProjects})
   });
 });
 
-app.get('api/portfolio/:id', function(req, res){
+app.get('/api/portfolio/:id', function(req, res){
+  db.Project.findOne({_id: req.params.id }, function(err, book) {
+    if (err){
+      console.log(err)
+      res.send("Project not found", err)
+    }
+    res.json(book);
+  });
+});
+
+app.post('/api/portfolio', function(req, res){
+  var newProject = new db.Project ({
+    name: req.body.name,
+    description: req.body.description,
+    projectLink: req.body.link,
+    techUsed: req.body.tech,
+    achievement: req.body.achievement
+  });
+  console.log(newProject)
+  newProject.save(function (err, book){
+    if (err){
+      console.log('Book not saved', err);
+    }
+    res.json(book);
+  });
+});
+
+app.put('/api/portfolio/:id', function(req, res){
 
 });
 
-app.post('api/portfolio', function(req, res){
+app.delete('/api/portfolio/:id', function(req, res){
 
 });
 
-app.put('api/portfolio/:id', function(req, res){
+app.get('/api/locations', function(req, res){
 
 });
 
-app.delete('api/portfolio/:id', function(req, res){
+app.post('/api/destinations', function(req, res){
 
 });
 
-app.get('api/locations', function(req, res){
+app.get('/api/current-obsessions', function(req, res){
 
 });
 
-app.post('api/destinations', function(req, res){
-
-});
-
-app.get('api/current-obsessions', function(req, res){
-
-});
-
-app.post('api/suggestions', function(req, res){
+app.post('/api/suggestions', function(req, res){
 
 });
 
