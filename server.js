@@ -43,7 +43,6 @@ app.get('/', function homepage(req, res) {
  */
 
 app.get('/api', function api_index(req, res) {
-  // TODO: Document all your api endpoints below
   res.json({
     woopsIForgotToDocumentAllMyEndpoints: false,
     message: "Welcome to my personal api! Here's what you need to know!",
@@ -51,7 +50,7 @@ app.get('/api', function api_index(req, res) {
     baseUrl: "http://arrjay-api.herokuapp.com",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Who is this arrjay guy anyway?"},
       {method: "GET", path: "/api/portfolio", description: "Samples of my work"},
       {method: "GET", path: "/api/future-portfolio", description: "What I am currently working on or planning"},
       {method: "POST", path: "/api/future-portfolio", description: "Add a project to my to do list"},
@@ -63,6 +62,28 @@ app.get('/api', function api_index(req, res) {
   })
 });
 
+app.get('/api/profile', function(req, res){
+  res.json({
+    name: "Ryan johnson",
+    githubUsername: "johnson-rl",
+    githubLink: "https://github.com/johnson-rl",
+    githubProfileImage: "https://avatars1.githubusercontent.com/u/23468749?v=3&u=3cae84756e81d5ab11bed0a04fe43bded436060e&s=400",
+    personalSiteLink: "https://johnson-rl.github.io/",
+    personalFunSiteLink: "http://arrjay.ninja/",
+    currentCity: "San Franciso",
+    pets: [{type: 'cat', name: "Juniper", breed: "Domestic Shorthair"}, {type: "Imaginary Dog", name: "Rufus", breed: "Boxer"}]
+  });
+});
+
+
+// name - a string
+// githubUsername - a string
+// githubLink - a url to your github profile
+// githubProfileImage - the url of your github profile image
+// personalSiteLink - a link to your personal site.
+// currentCity
+// pets - an array of your pets
+// e.g. [{name: "foo", type: "Cat", breed: "Siamese"}, {name: "bar", type: "Dog", breed: "Dalmation"}]
 /**********
  * SERVER *
  **********/
