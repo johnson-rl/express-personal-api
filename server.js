@@ -77,9 +77,14 @@ app.get('/api/profile', function(req, res){
   });
 });
 
-app.get('api/portfolio', function(req, res){
-  db.Project.find({}, function(err, allProjects))
-  res.json({portfolio: allProjects})
+app.get('/api/portfolio', function(req, res){
+  db.Project.find({}, function(err, allProjects){
+    if (err){
+      console.log(err)
+      res.send("No projects found")
+    }
+    res.json({portfolio: allProjects})
+  });
 });
 
 app.get('api/portfolio/:id', function(req, res){
