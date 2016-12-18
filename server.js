@@ -51,11 +51,11 @@ app.get('/api', function api_index(req, res) {
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Who is this arrjay guy anyway?"},
-      {method: "GET", path: "/api/portfolio", description: "Samples of my work"},
-      {method: "GET", path: "/api/portfolio/:id", description: "One sample of my work"},
-      {method: "POST", path: "/api/portfolio", description: "Add a project"},
-      {method: "PUT", path: "/api/portfolio/:id", description: "Update info about a project"},
-      {method: "DELETE", path: "/api/portfolio/:id", description: "Remove a project"},
+      {method: "GET", path: "/api/projects", description: "Samples of my work"},
+      {method: "GET", path: "/api/projects/:id", description: "One sample of my work"},
+      {method: "POST", path: "/api/projects", description: "Add a project"},
+      {method: "PUT", path: "/api/projects/:id", description: "Update info about a project"},
+      {method: "DELETE", path: "/api/projects/:id", description: "Remove a project"},
       {method: "GET", path: "/api/locations", description: "Places I've lived or loved"},
       {method: "POST", path: "/api/destinations", description: "Places I need to visit"},
       {method: "GET", path: "/api/current-obsessions", description: "Stuff with which I'm currently obsessed"},
@@ -77,7 +77,7 @@ app.get('/api/profile', function(req, res){
   });
 });
 //Get all portfolio projects
-app.get('/api/portfolio', function(req, res){
+app.get('/api/projects', function(req, res){
   db.Project.find({}, function(err, allProjects){
     if (err){
       console.log(err)
@@ -87,7 +87,7 @@ app.get('/api/portfolio', function(req, res){
   });
 });
 //Get one portfolio project
-app.get('/api/portfolio/:id', function(req, res){
+app.get('/api/projects/:id', function(req, res){
   db.Project.findOne({_id: req.params.id }, function(err, book) {
     if (err){
       console.log(err)
@@ -97,7 +97,7 @@ app.get('/api/portfolio/:id', function(req, res){
   });
 });
 //Create a portfolio project
-app.post('/api/portfolio', function(req, res){
+app.post('/api/projects', function(req, res){
   var newProject = new db.Project ({
     name: req.body.name,
     description: req.body.description,
@@ -115,7 +115,7 @@ app.post('/api/portfolio', function(req, res){
   });
 });
 //Edit a portfolio project
-app.put('/api/portfolio/:id', function(req, res){
+app.put('/api/projects/:id', function(req, res){
   db.Project.findOne({_id: req.params.id}, function (err, project){
     if (err){
       console.log("No edit made",err);
@@ -136,7 +136,7 @@ app.put('/api/portfolio/:id', function(req, res){
   });
 });
 //Delete a portfolio project
-app.delete('/api/portfolio/:id', function(req, res){
+app.delete('/api/projects/:id', function(req, res){
   db.Project.findOneAndRemove({_id: req.params.id}, function(err, project){
     if (err){
       console.log('Project not deleted', err);

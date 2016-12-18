@@ -15,9 +15,9 @@ db.Project.create(new_project, function(err, project){
   if (err){
     return console.log("error:", err);
   }
-    console.log("Created new project", project._id)
+    console.log("Created new project", project._id);
     process.exit(); // we're all done! Exit the program.
-})
+});
 
 // var new_campsite = {description: "Sharp rocks. Middle of nowhere."}
 

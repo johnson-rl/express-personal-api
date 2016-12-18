@@ -6,7 +6,8 @@ var ProjectSchema = new Schema ({
   description: String,
   projectLink: String,
   techUsed: Array,
-  achievement: String
+  achievement: String,
+  screenshot: String
 });
 
 var Project = mongoose.model('Project', ProjectSchema)
