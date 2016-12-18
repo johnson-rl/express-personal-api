@@ -64,17 +64,49 @@
                       <h5>Description</h5>
                       <p>{{json.description}}</p>
                       <ul class="{{json._id}}"><h5>Technologies Used</h5>
-
                       </ul>
                       <h5>Achievement</h5>
                       <p>{{json.achievement}}</p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       <button type="button" class="btn btn-primary">View {{json.name}}</button>
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#mySecondModal">Edit</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>
+
+                <!-- Edit form in modal nested in the modal -->
+                <div class="modal fade" id="mySecondModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">{{json.name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="edit-form" action="">
+                          Project Name:<input class="input-width edit-form"type="text" placeholder="Name of Project">
+                          Project Link:<input class="input-width edit-form"type="text" placeholder="Link to Project">
+                          Project Description:<input class="input-width edit-form-large"type="textbox" placeholder="Description of the Project">
+                          Project Achievement:<input class="input-width edit-form-large"type="textbox" placeholder="Achievement that makes me proud">
+                          Technologies Used:<ul>
+                            <input type="checkbox" name="vehicle1" value="Bike"> Javascript
+                            <input type="checkbox" name="vehicle2" value="Car"> Jquery
+                            <input type="checkbox" name="vehicle3" value="Boat"> Handlebars
+                          </ul>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Discard</button>
+
+                        <button type="submit" id="save-changes"class="btn btn-default">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </script>

@@ -27,11 +27,15 @@ img {
 }*/
 
 .modal-button {
-  width: 100%!important;
+  width: 95%!important;
   height: 200px;
+  /*padding: 20px;*/
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  /*border: 20px solid transparent;*/
+  /*border-image: url('../images/frame.jpg')!important;*/
+  /*border-image-repeat: stretch!important;*/
   /*opacity: .5;*/
   /*-1px -1px 0 #ffffff,
    1px -1px 0 #ffffff,
@@ -45,4 +49,20 @@ img {
   font-weight: 900;
   background-color: rgba(0,0,0,.05);
   border: 1px solid grey;
+}
+
+.input-width {
+  /*display: block;*/
+  /*text-align: right;*/
+
+}
+
+.edit-form, .edit-form-large {
+  margin:5px;
+  width: 100%;
+  padding-right: 20px;
+}
+
+.edit-form-large {
+  height:60px;
 }
