@@ -102,7 +102,7 @@ app.post('/api/projects', function(req, res){
   var newProject = new db.Project ({
     name: req.body.name,
     description: req.body.description,
-    projectLink: req.body.link,
+    projectLink: req.body.projectLink,
     techUsed: req.body.tech,
     achievement: req.body.achievement,
     screenshot: req.body.screenshot
@@ -126,7 +126,7 @@ app.put('/api/projects/', function(req, res){
     project.name = req.body.name || project.name;
     console.log(req.body.name)
     project.description = req.body.description || project.description;
-    project.link = req.body.link || project.link;
+    project.projectLink = req.body.projectLink || project.projectLink;
     project.techUsed = req.body.tech || project.techUsed;
     project.achievement = req.body.achievement || project.achievement;
     project.screenshot = req.body.screenshot || project.screenshot;
