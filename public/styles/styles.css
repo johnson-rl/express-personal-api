@@ -52,6 +52,14 @@ img {
   color: white;
 }
 
+.modal-content input {
+  color: black;
+}
+
+.override-input {
+  color: white!important;
+}
+
 .modal-button {
   width: 95%!important;
   height: 200px;
