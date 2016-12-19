@@ -123,12 +123,13 @@ app.put('/api/projects/', function(req, res){
       console.log("No edit made",err);
       res.send("No edit made",err);
     }
-    project.name = req.body.name;
-    project.description = req.body.description;
-    project.link = req.body.link;
-    project.techUsed = req.body.tech;
-    project.achievement = req.body.achievement;
-    project.screenshot = req.body.screenshot
+    project.name = req.body.name || project.name;
+    console.log(req.body.name)
+    project.description = req.body.description || project.description;
+    project.link = req.body.link || project.link;
+    project.techUsed = req.body.tech || project.techUsed;
+    project.achievement = req.body.achievement || project.achievement;
+    project.screenshot = req.body.screenshot || project.screenshot;
     project.save(function (err, project){
       if (err){
         console.log('Project not saved', err);
