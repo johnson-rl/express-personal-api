@@ -19,7 +19,7 @@
 
 This project is my first attempt at building an API and a full stack website!  It also serves as a way to showcase all of my work up to this point.  I'm proud of how it came out, and while it took some time to hook up all of my routes to the front end, it was a satisfying project, and I'm ultimately proud of how it looks and functions now.
 
-## What's Next for Cuddle Dungeon?
+## What's Next for This Project?
 
 <li> Add a Permissions level so I'm the only one who can change and delete projects</li>
 <li> Incorporate other API endpoints </li>
