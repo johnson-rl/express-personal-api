@@ -28,7 +28,7 @@ h1 {
 
 img {
   height: auto;
-  width: 95%;
+  width: 100%;
 }
 
 /*.offset-name {
@@ -42,6 +42,15 @@ img {
   top:250px;
   text-align: center;
 }*/
+
+.modal {
+  background-color: rgba(255,255,255,.3)
+}
+
+.modal-content {
+  background-color: rgba(50,80,124,.95)!important;
+  color: white;
+}
 
 .modal-button {
   width: 95%!important;
