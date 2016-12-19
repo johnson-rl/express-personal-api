@@ -1,7 +1,10 @@
 body {
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: skyblue; /* Sanity Check! */
+  background-image: url("https://ae01.alicdn.com/kf/HTB1.S1CKFXXXXXGaXXXq6xXFXXX3/10x10FT-Solid-Red-Curtain-Stage-font-b-Drape-b-font-Mosaic-Tiles-Wedding-Custume-Custom-font.jpg");
+  ackground-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
@@ -73,5 +76,6 @@ img {
 }
 
 .new-project-button {
-
+  background-color: rgba(255,255,255,.1)!important;
+  color: white;
 }
