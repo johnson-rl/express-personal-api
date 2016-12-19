@@ -1,4 +1,4 @@
-# Ryan Johnson: A Portfolio and API - [Play it Here](https://arrjay-api.herokuapp.com/)
+# Ryan Johnson: A Portfolio and API - [See it Here](https://arrjay-api.herokuapp.com/)
 
 
 ## Technologies Used
