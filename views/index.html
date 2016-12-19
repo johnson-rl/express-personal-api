@@ -64,13 +64,14 @@
                       <img src="{{json.screenshot}}" alt="sceenshot of {{json.name}}">
                       <h5>Description</h5>
                       <p>{{json.description}}</p>
-                      <ul class="{{json._id}}"><h5>Technologies Used</h5>
+                      <h5>Technologies Used</h5>
+                      <ul class="{{json._id}}">
                       </ul>
                       <h5>Achievement</h5>
                       <p>{{json.achievement}}</p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">View {{json.name}}</button>
+                      <a type="button" href="{{json.projectLink}}"class="btn btn-primary">View {{json.name}}</a>
                       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#second{{json._id}}">Edit</button>
                       <button type="button" class="btn btn-danger deleteBtn" data-id={{json._id}}>Delete</button>
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -91,12 +92,20 @@
                           <input type="hidden" name="id" value={{json._id}}>
                           Project Name:<input class="input-width edit-form" name="name" type="text" placeholder="Name of Project">
                           Project Link:<input class="input-width edit-form" name="projectLink" type="text" placeholder="Link to Project">
+                          Screenshot URL:<input class="input-width edit-form" name="screenshot" type="text" placeholder="Screenshot URL">
                           Project Description:<input class="input-width edit-form-large" name="description" type="textbox" placeholder="Description of the Project">
                           Project Achievement:<input class="input-width edit-form-large" name="achievement" type="textbox" placeholder="Achievement that makes me proud">
-                          Technologies Used:<ul>
-                            <input type="checkbox" name="techUsed" value="Bike"> Javascript
-                            <input type="checkbox" name="techUsed" value="Car"> Jquery
-                            <input type="checkbox" name="techUsed" value="Boat"> Handlebars
+                          Technologies Used:
+                          <ul>
+                            <input type="checkbox" name="tech" value="Javascript"> Javascript
+                            <input type="checkbox" name="tech" value="Jquery"> Jquery
+                            <input type="checkbox" name="tech" value="Handlebars"> Handlebars
+                            <input type="checkbox" name="tech" value="Bootstrap"> Bootstrap
+                            <input type="checkbox" name="tech" value="ajax"> ajax
+                            <input type="checkbox" name="tech" value="MongoDB"> MongoDB
+                            <input type="checkbox" name="tech" value="Express"> Express
+                            <input type="checkbox" name="tech" value="Mongoose"> Mongoose
+                            <input type="checkbox" name="tech" value="Node.js"> Node.js
                           </ul>
                           <input type="submit" value="Save">
                         </form>
@@ -116,7 +125,7 @@
 
         </div>
       </div>
-      
+
       <!-- modal for adding new projects -->
       <div class="row">
         <button type="button" class="btn btn-lg col-xs-2 col-xs-offset-5 new-project-button" data-toggle="modal" data-target="#newClassModal">
@@ -135,12 +144,20 @@
                   <input type="hidden" name="id" value={{json._id}}>
                   Project Name:<input class="input-width edit-form" name="name" type="text" placeholder="Name of Project">
                   Project Link:<input class="input-width edit-form" name="projectLink" type="text" placeholder="Link to Project">
+                  Screenshot URL:<input class="input-width edit-form" name="screenshot" type="text" placeholder="Screenshot URL">
                   Project Description:<input class="input-width edit-form-large" name="description" type="textbox" placeholder="Description of the Project">
                   Project Achievement:<input class="input-width edit-form-large" name="achievement" type="textbox" placeholder="Achievement that makes me proud">
-                  Technologies Used:<ul>
-                    <input type="checkbox" name="techUsed" value="Bike"> Javascript
-                    <input type="checkbox" name="techUsed" value="Car"> Jquery
-                    <input type="checkbox" name="techUsed" value="Boat"> Handlebars
+                  Technologies Used:
+                  <ul>
+                    <input type="checkbox" name="tech" value="Javascript"> Javascript
+                    <input type="checkbox" name="tech" value="Jquery"> Jquery
+                    <input type="checkbox" name="tech" value="Handlebars"> Handlebars
+                    <input type="checkbox" name="tech" value="Bootstrap"> Bootstrap
+                    <input type="checkbox" name="tech" value="ajax"> ajax
+                    <input type="checkbox" name="tech" value="MongoDB"> MongoDB
+                    <input type="checkbox" name="tech" value="Express"> Express
+                    <input type="checkbox" name="tech" value="Mongoose"> Mongoose
+                    <input type="checkbox" name="tech" value="Node.js"> Node.js
                   </ul>
                   <input type="submit" value="Save">
                 </form>

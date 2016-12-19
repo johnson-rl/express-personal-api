@@ -57,10 +57,10 @@ app.get('/api', function api_index(req, res) {
       {method: "POST", path: "/api/projects", description: "Add a project"},
       {method: "PUT", path: "/api/projects/:id", description: "Update info about a project"},
       {method: "DELETE", path: "/api/projects/:id", description: "Remove a project"},
-      {method: "GET", path: "/api/locations", description: "Places I've lived or loved"},
-      {method: "POST", path: "/api/destinations", description: "Places I need to visit"},
-      {method: "GET", path: "/api/current-obsessions", description: "Stuff with which I'm currently obsessed"},
-      {method: "POST", path: "/api/suggestions", description: "Works of art I'm yet to enjoy"},
+      // {method: "GET", path: "/api/locations", description: "Places I've lived or loved"},
+      // {method: "POST", path: "/api/destinations", description: "Places I need to visit"},
+      // {method: "GET", path: "/api/current-obsessions", description: "Stuff with which I'm currently obsessed"},
+      // {method: "POST", path: "/api/suggestions", description: "Works of art I'm yet to enjoy"},
     ]
   });
 });
@@ -104,7 +104,8 @@ app.post('/api/projects', function(req, res){
     description: req.body.description,
     projectLink: req.body.link,
     techUsed: req.body.tech,
-    achievement: req.body.achievement
+    achievement: req.body.achievement,
+    screenshot: req.body.screenshot
   });
   // console.log(newProject)
   newProject.save(function (err, project){
@@ -127,6 +128,7 @@ app.put('/api/projects/', function(req, res){
     project.link = req.body.link;
     project.techUsed = req.body.tech;
     project.achievement = req.body.achievement;
+    project.screenshot = req.body.screenshot
     project.save(function (err, project){
       if (err){
         console.log('Project not saved', err);
