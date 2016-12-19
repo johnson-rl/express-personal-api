@@ -10,7 +10,7 @@ body {
 .header-headline {
   color: rgba(16,60,130,.9);
   /*color: rgba(200,200,200,1);*/
-  margin-top: 75px!important;
+  margin-top: 50px!important;
   text-shadow: 1px 1px .25px white!important;
 }
 
