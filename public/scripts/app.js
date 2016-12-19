@@ -12,11 +12,28 @@ $(document).ready(function(){
     error: onError
   });
 
-
+  $('.newProjectForm').submit(function(event){
+    // console.log("hello")
+    event.preventDefault();
+    // console.log('submit')
+    $.ajax({
+      method:'POST',
+      url: '/api/projects/',
+      data: $(this).serializeArray(),
+      success: changeProjects,
+      error: onError
+    });
+  });
 
   function changeProjects(data){
     console.log(data)
-    $('.prepend-button').prepend('<p style="text-align:left">Successfully Saved!</p>')
+    location.reload();
+    // $('.prepend-button').prepend('<p style="text-align:left">Successfully Saved!</p>')
+  }
+
+  function deleteProjSuccess(data){
+    console.log("deleted", data)
+    location.reload()
   }
 
   function addProjects(json){
@@ -44,9 +61,18 @@ $(document).ready(function(){
         error: onError
       });
     });
-    $('#mySecondModal').on('hidden.bs.modal', function () {
-      location.reload();
-    })
+    // $('#mySecondModal').on('hidden.bs.modal', function () {
+      // location.reload();
+    // })
+    $('.deleteBtn').on('click', function() {
+      console.log('clicked delete button to', '/api/books/'+$(this).attr('data-id'));
+      $.ajax({
+        method: 'DELETE',
+        url: '/api/projects/'+$(this).attr('data-id'),
+        success: deleteProjSuccess,
+        error: onError
+      });
+    });
   };
 });
 
