@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods",'GET,PUT,PATCH,POST,DELETE');
   next();
 });
 
@@ -114,7 +115,28 @@ app.post('/api/projects', function(req, res){
     res.json(project);
   });
 });
-//Edit a portfolio project
+//Edit a portfolio project using my web page
+app.put('/api/projects/', function(req, res){
+  db.Project.findOne({_id: req.body.id}, function (err, project){
+    if (err){
+      console.log("No edit made",err);
+      res.send("No edit made",err);
+    }
+    project.name = req.body.name;
+    project.description = req.body.description;
+    project.link = req.body.link;
+    project.techUsed = req.body.tech;
+    project.achievement = req.body.achievement;
+    project.save(function (err, project){
+      if (err){
+        console.log('Project not saved', err);
+        res.send('Project not saved', err);
+      }
+      res.json(project);
+    });
+  });
+});
+//edit a porfolio project using corey's magical program
 app.put('/api/projects/:id', function(req, res){
   db.Project.findOne({_id: req.params.id}, function (err, project){
     if (err){

@@ -86,22 +86,24 @@
                         <h4 class="modal-title" id="myModalLabel">{{json.name}}</h4>
                       </div>
                       <div class="modal-body">
-                        <form class="edit-form" action="">
-                          Project Name:<input class="input-width edit-form"type="text" placeholder="Name of Project">
-                          Project Link:<input class="input-width edit-form"type="text" placeholder="Link to Project">
-                          Project Description:<input class="input-width edit-form-large"type="textbox" placeholder="Description of the Project">
-                          Project Achievement:<input class="input-width edit-form-large"type="textbox" placeholder="Achievement that makes me proud">
+                        <form class="saveChanges" class="edit-form" method="put">
+                          <input type="hidden" name="id" value={{json._id}}>
+                          Project Name:<input class="input-width edit-form" name="name" type="text" placeholder="Name of Project">
+                          Project Link:<input class="input-width edit-form" name="projectLink" type="text" placeholder="Link to Project">
+                          Project Description:<input class="input-width edit-form-large" name="description" type="textbox" placeholder="Description of the Project">
+                          Project Achievement:<input class="input-width edit-form-large" name="achievement" type="textbox" placeholder="Achievement that makes me proud">
                           Technologies Used:<ul>
-                            <input type="checkbox" name="vehicle1" value="Bike"> Javascript
-                            <input type="checkbox" name="vehicle2" value="Car"> Jquery
-                            <input type="checkbox" name="vehicle3" value="Boat"> Handlebars
+                            <input type="checkbox" name="techUsed" value="Bike"> Javascript
+                            <input type="checkbox" name="techUsed" value="Car"> Jquery
+                            <input type="checkbox" name="techUsed" value="Boat"> Handlebars
                           </ul>
+                          <input type="submit" value="Save">
                         </form>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Discard</button>
+                      <div class="modal-footer prepend-button">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
 
-                        <button type="submit" id="save-changes"class="btn btn-default">Save</button>
+
                       </div>
                     </div>
                   </div>

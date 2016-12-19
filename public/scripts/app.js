@@ -4,12 +4,21 @@ $(document).ready(function(){
 // handlebars function created
   var source = $('#projects-template').html();
   var template = Handlebars.compile(source);
+
   $.ajax({
     method: 'GET',
     url: '/api/projects',
     success: addProjects,
     error: onError
   });
+
+
+
+  function changeProjects(data){
+    console.log(data)
+    $('.prepend-button').prepend('<p style="text-align:left">Successfully Saved!</p>')
+  }
+
   function addProjects(json){
     // console.log('ajax got profile projects',json)
     json.portfolio.forEach(function(project){
@@ -23,6 +32,21 @@ $(document).ready(function(){
         $('.'+appendId).append('<li>'+technology+'</li>');
       });
     });
+    $('.saveChanges').submit(function(event){
+      // console.log("hello")
+      event.preventDefault();
+      // console.log('submit')
+      $.ajax({
+        method:'PUT',
+        url: '/api/projects/',
+        data: $(this).serializeArray(),
+        success: changeProjects,
+        error: onError
+      });
+    });
+    $('#mySecondModal').on('hidden.bs.modal', function () {
+      location.reload();
+    })
   };
 });
 

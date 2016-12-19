@@ -66,3 +66,7 @@ img {
 .edit-form-large {
   height:60px;
 }
+
+.prepend-button {
+  color: green;
+}

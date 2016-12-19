@@ -28,6 +28,18 @@
   <!-- <script src="/scripts/app.js"></script> -->
 </head>
   <body>
+    <form class="saveChanges" class="edit-form">
+      Project Name:<input class="input-width edit-form" name="name" type="text" placeholder="Name of Project">
+      Project Link:<input class="input-width edit-form" name="projectLink" type="text" placeholder="Link to Project">
+      Project Description:<input class="input-width edit-form-large" name="description" type="textbox" placeholder="Description of the Project">
+      Project Achievement:<input class="input-width edit-form-large" name="achievement" type="textbox" placeholder="Achievement that makes me proud">
+      Technologies Used:<ul>
+        <input type="checkbox" name="techUsed" value="Bike"> Javascript
+        <input type="checkbox" name="techUsed" value="Car"> Jquery
+        <input type="checkbox" name="techUsed" value="Boat"> Handlebars
+      </ul>
+      <input type="submit" value="Save">
+    </form>
     <button type="button" class="modal-button" data-toggle="modal" data-target="#myModal">
       Launch demo modal
     </button>
