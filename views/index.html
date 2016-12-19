@@ -33,53 +33,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h1>Under Construction</h1>
-          <h4><a href="/api">Read My API Documentation</a></h4>
-        </div>
-      </div>
-
-      <!-- modal for adding new projects -->
-      <div class="row">
-        <button type="button" class="btn btn-lg col-xs-2 col-xs-offset-5 new-project-button" data-toggle="modal" data-target="#newClassModal">
-          <span class="modal-text">Add New Project</span>
-        </button>
-
-        <div class="modal fade" id="newClassModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">New Project</h4>
-              </div>
-              <div class="modal-body">
-                <form class="newProjectForm" class="edit-form" method="put">
-                  <input type="hidden" name="id" value={{json._id}}>
-                  Project Name:<input class="input-width edit-form" name="name" type="text" placeholder="Name of Project">
-                  Project Link:<input class="input-width edit-form" name="projectLink" type="text" placeholder="Link to Project">
-                  Project Description:<input class="input-width edit-form-large" name="description" type="textbox" placeholder="Description of the Project">
-                  Project Achievement:<input class="input-width edit-form-large" name="achievement" type="textbox" placeholder="Achievement that makes me proud">
-                  Technologies Used:<ul>
-                    <input type="checkbox" name="techUsed" value="Bike"> Javascript
-                    <input type="checkbox" name="techUsed" value="Car"> Jquery
-                    <input type="checkbox" name="techUsed" value="Boat"> Handlebars
-                  </ul>
-                  <input type="submit" value="Save">
-                </form>
-              </div>
-              <div class="modal-footer prepend-button">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
-
-
-              </div>
-            </div>
-          </div>
+          <h1 class="header-headline">Ryan Johnson: A web developer's portfolio</h1>
+          <h4 class="subtitle"><a href="/api">Read My API Documentation</a></h4>
         </div>
       </div>
 
       <div class="row">
         <div class="col-xs-12" id="append-projects">
 
-          <!-- Handlesbars template for project thumbnails and modal-->
+          <!-- Handlebars template for project thumbnails and modal-->
           <script id="projects-template" type="text/x-handlebars-template">
             <div class="col-md-4 col-sm-6 col-xs-12">
               <!-- <img src="{{json.screenshot}}" alt="sceenshot of {{json.name}}">
@@ -152,6 +114,42 @@
             </div>
           </script>
 
+        </div>
+      </div>
+      
+      <!-- modal for adding new projects -->
+      <div class="row">
+        <button type="button" class="btn btn-lg col-xs-2 col-xs-offset-5 new-project-button" data-toggle="modal" data-target="#newClassModal">
+          <span class="modal-text">Add New Project</span>
+        </button>
+
+        <div class="modal fade" id="newClassModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">New Project</h4>
+              </div>
+              <div class="modal-body">
+                <form class="newProjectForm" class="edit-form" method="put">
+                  <input type="hidden" name="id" value={{json._id}}>
+                  Project Name:<input class="input-width edit-form" name="name" type="text" placeholder="Name of Project">
+                  Project Link:<input class="input-width edit-form" name="projectLink" type="text" placeholder="Link to Project">
+                  Project Description:<input class="input-width edit-form-large" name="description" type="textbox" placeholder="Description of the Project">
+                  Project Achievement:<input class="input-width edit-form-large" name="achievement" type="textbox" placeholder="Achievement that makes me proud">
+                  Technologies Used:<ul>
+                    <input type="checkbox" name="techUsed" value="Bike"> Javascript
+                    <input type="checkbox" name="techUsed" value="Car"> Jquery
+                    <input type="checkbox" name="techUsed" value="Boat"> Handlebars
+                  </ul>
+                  <input type="submit" value="Save">
+                </form>
+              </div>
+              <div class="modal-footer prepend-button">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

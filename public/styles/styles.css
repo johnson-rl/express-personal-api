@@ -1,10 +1,24 @@
 body {
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
-  background-image: url("https://ae01.alicdn.com/kf/HTB1.S1CKFXXXXXGaXXXq6xXFXXX3/10x10FT-Solid-Red-Curtain-Stage-font-b-Drape-b-font-Mosaic-Tiles-Wedding-Custume-Custom-font.jpg");
+  background-image: url("http://atwatergallery.com/wp-content/uploads/2016/02/tumblr_static_7lcmgvkzvgkkso4woswoo80sk.jpg");
   ackground-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.header-headline {
+  color: rgba(16,60,130,.9);
+  /*color: rgba(200,200,200,1);*/
+  margin-top: 75px!important;
+  text-shadow: 1px 1px .25px white!important;
+}
+
+.subtitle {
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 25px;
+  color: rgba(180,180,255,.7);
 }
 
 h1 {
@@ -51,8 +65,8 @@ img {
   opacity: 1!important;
   text-shadow: 1px 1px  .5px black!important;
   font-weight: 900;
-  background-color: rgba(0,0,0,.05);
-  border: 1px solid grey;
+  background-color: rgba(0,0,0,.1);
+  /*border: 1px solid grey;*/
 }
 
 .input-width {
@@ -76,6 +90,6 @@ img {
 }
 
 .new-project-button {
-  background-color: rgba(255,255,255,.1)!important;
+  background-color: rgba(16,60,130,.5)!important;
   color: white;
 }
